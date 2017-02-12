@@ -39,6 +39,12 @@ namespace Hotel_App
                     }
                 }
             }
+
+            if (User.permissionServicesList.Contains(btnAddRoom.AccessibleName) || User.permissionServicesList.Contains(btnUpdateRoom.AccessibleName))
+            {
+                btnAddRoom.Visible = true;
+                btnUpdateRoom.Visible = true;
+            }
         }
 
         private void dgvRooms_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
@@ -70,6 +76,36 @@ namespace Hotel_App
         private void dgvRooms_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
         {
             this.roomSelectTableAdapter.Fill(this.hotel_BaseDataSet.RoomSelect);
+        }
+
+        private void btnAddRoom_Click(object sender, EventArgs e)
+        {
+            AddUpdateRoom addroomform = new AddUpdateRoom();
+            addroomform.ShowDialog();
+            this.roomSelectTableAdapter.Fill(this.hotel_BaseDataSet.RoomSelect);
+        }
+
+        private void btnUpdateRoom_Click(object sender, EventArgs e)
+        {
+            int rowindex = dgvRooms.CurrentCell.RowIndex;
+            List<string> cellsvalues = new List<string>();
+            for (int i = 0; i < 5; i++)
+            {
+                cellsvalues.Add(dgvRooms.Rows[rowindex].Cells[i].Value.ToString());
+            }
+
+            AddUpdateRoom updateRoomForm = new AddUpdateRoom();
+            updateRoomForm.Text = "Update Room";
+            updateRoomForm.btnOK.Text = "Update";
+            updateRoomForm.updateid = int.Parse(cellsvalues[0]);
+            updateRoomForm.tbRoomType.Text = cellsvalues[1];
+            updateRoomForm.tbMaxPeople.Text = cellsvalues[2];
+            updateRoomForm.rtbOptions.Text = cellsvalues[3];
+            updateRoomForm.tbPrice.Text = cellsvalues[4];
+            updateRoomForm.changetype = true;
+            updateRoomForm.ShowDialog();
+            this.roomSelectTableAdapter.Fill(this.hotel_BaseDataSet.RoomSelect);
+
         }
     }
 }

@@ -29,15 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tsMainMenu = new System.Windows.Forms.ToolStrip();
-            this.tsbtnExit = new System.Windows.Forms.ToolStripButton();
             this.tssp = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbtnGuests = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnReservations = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnHistory = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnMyReservations = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnEditProfile = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tslbUserDesc = new System.Windows.Forms.ToolStripLabel();
             this.dgvRooms = new System.Windows.Forms.DataGridView();
@@ -52,6 +46,13 @@
             this.procedures = new Hotel_App.Hotel_BaseDataSetTableAdapters.procedures();
             this.btnAddRoom = new System.Windows.Forms.Button();
             this.btnUpdateRoom = new System.Windows.Forms.Button();
+            this.tsbtnExit = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnGuests = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnReservations = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnHistory = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnMyReservations = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnEditProfile = new System.Windows.Forms.ToolStripButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.tsMainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRooms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomSelectBindingSource)).BeginInit();
@@ -78,77 +79,10 @@
             this.tsMainMenu.TabIndex = 0;
             this.tsMainMenu.Text = "toolStrip1";
             // 
-            // tsbtnExit
-            // 
-            this.tsbtnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tsbtnExit.Image = global::Hotel_App.Properties.Resources.exit;
-            this.tsbtnExit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnExit.Name = "tsbtnExit";
-            this.tsbtnExit.Size = new System.Drawing.Size(54, 69);
-            this.tsbtnExit.Text = "Exit";
-            this.tsbtnExit.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.tsbtnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbtnExit.Click += new System.EventHandler(this.tsbtnExit_Click);
-            // 
             // tssp
             // 
             this.tssp.Name = "tssp";
             this.tssp.Size = new System.Drawing.Size(6, 72);
-            // 
-            // tsbtnGuests
-            // 
-            this.tsbtnGuests.AccessibleName = "Guests";
-            this.tsbtnGuests.Image = global::Hotel_App.Properties.Resources.guests;
-            this.tsbtnGuests.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnGuests.Name = "tsbtnGuests";
-            this.tsbtnGuests.Size = new System.Drawing.Size(54, 69);
-            this.tsbtnGuests.Text = "Guests";
-            this.tsbtnGuests.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbtnGuests.Visible = false;
-            // 
-            // tsbtnReservations
-            // 
-            this.tsbtnReservations.AccessibleName = "Reservations";
-            this.tsbtnReservations.Image = global::Hotel_App.Properties.Resources.reservations;
-            this.tsbtnReservations.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnReservations.Name = "tsbtnReservations";
-            this.tsbtnReservations.Size = new System.Drawing.Size(77, 69);
-            this.tsbtnReservations.Text = "Reservations";
-            this.tsbtnReservations.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbtnReservations.Visible = false;
-            // 
-            // tsbtnHistory
-            // 
-            this.tsbtnHistory.AccessibleName = "History";
-            this.tsbtnHistory.Image = global::Hotel_App.Properties.Resources.history;
-            this.tsbtnHistory.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnHistory.Name = "tsbtnHistory";
-            this.tsbtnHistory.Size = new System.Drawing.Size(54, 69);
-            this.tsbtnHistory.Text = "History";
-            this.tsbtnHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbtnHistory.Visible = false;
-            // 
-            // tsbtnMyReservations
-            // 
-            this.tsbtnMyReservations.AccessibleName = "UserReservations";
-            this.tsbtnMyReservations.Image = global::Hotel_App.Properties.Resources.reservations;
-            this.tsbtnMyReservations.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnMyReservations.Name = "tsbtnMyReservations";
-            this.tsbtnMyReservations.Size = new System.Drawing.Size(97, 69);
-            this.tsbtnMyReservations.Text = "My Reservations";
-            this.tsbtnMyReservations.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbtnMyReservations.Visible = false;
-            // 
-            // tsbtnEditProfile
-            // 
-            this.tsbtnEditProfile.AccessibleName = "EditProfile";
-            this.tsbtnEditProfile.Image = global::Hotel_App.Properties.Resources.edit_profile;
-            this.tsbtnEditProfile.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnEditProfile.Name = "tsbtnEditProfile";
-            this.tsbtnEditProfile.Size = new System.Drawing.Size(68, 69);
-            this.tsbtnEditProfile.Text = "Edit Profile";
-            this.tsbtnEditProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.tsbtnEditProfile.Visible = false;
             // 
             // toolStripSeparator1
             // 
@@ -178,14 +112,14 @@
             this.optionsDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn});
             this.dgvRooms.DataSource = this.roomSelectBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRooms.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRooms.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvRooms.GridColor = System.Drawing.SystemColors.Control;
             this.dgvRooms.Location = new System.Drawing.Point(0, 99);
             this.dgvRooms.Name = "dgvRooms";
@@ -246,31 +180,115 @@
             // 
             // btnAddRoom
             // 
+            this.btnAddRoom.AccessibleName = "ChangeRoom";
             this.btnAddRoom.Location = new System.Drawing.Point(391, 75);
             this.btnAddRoom.Name = "btnAddRoom";
             this.btnAddRoom.Size = new System.Drawing.Size(75, 23);
             this.btnAddRoom.TabIndex = 2;
             this.btnAddRoom.Text = "Add Room";
             this.btnAddRoom.UseVisualStyleBackColor = true;
+            this.btnAddRoom.Visible = false;
+            this.btnAddRoom.Click += new System.EventHandler(this.btnAddRoom_Click);
             // 
             // btnUpdateRoom
             // 
+            this.btnUpdateRoom.AccessibleName = "ChangeRoom";
             this.btnUpdateRoom.Location = new System.Drawing.Point(472, 75);
             this.btnUpdateRoom.Name = "btnUpdateRoom";
             this.btnUpdateRoom.Size = new System.Drawing.Size(82, 23);
             this.btnUpdateRoom.TabIndex = 3;
             this.btnUpdateRoom.Text = "Update Room";
             this.btnUpdateRoom.UseVisualStyleBackColor = true;
+            this.btnUpdateRoom.Visible = false;
+            this.btnUpdateRoom.Click += new System.EventHandler(this.btnUpdateRoom_Click);
+            // 
+            // tsbtnExit
+            // 
+            this.tsbtnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tsbtnExit.Image = global::Hotel_App.Properties.Resources.exit;
+            this.tsbtnExit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnExit.Name = "tsbtnExit";
+            this.tsbtnExit.Size = new System.Drawing.Size(54, 69);
+            this.tsbtnExit.Text = "Exit";
+            this.tsbtnExit.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.tsbtnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnExit.Click += new System.EventHandler(this.tsbtnExit_Click);
+            // 
+            // tsbtnGuests
+            // 
+            this.tsbtnGuests.AccessibleName = "Guests";
+            this.tsbtnGuests.Image = global::Hotel_App.Properties.Resources.guests;
+            this.tsbtnGuests.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnGuests.Name = "tsbtnGuests";
+            this.tsbtnGuests.Size = new System.Drawing.Size(54, 69);
+            this.tsbtnGuests.Text = "Guests";
+            this.tsbtnGuests.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnGuests.Visible = false;
+            // 
+            // tsbtnReservations
+            // 
+            this.tsbtnReservations.AccessibleName = "Reservations";
+            this.tsbtnReservations.Image = global::Hotel_App.Properties.Resources.reservations;
+            this.tsbtnReservations.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnReservations.Name = "tsbtnReservations";
+            this.tsbtnReservations.Size = new System.Drawing.Size(77, 69);
+            this.tsbtnReservations.Text = "Reservations";
+            this.tsbtnReservations.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnReservations.Visible = false;
+            // 
+            // tsbtnHistory
+            // 
+            this.tsbtnHistory.AccessibleName = "History";
+            this.tsbtnHistory.Image = global::Hotel_App.Properties.Resources.history;
+            this.tsbtnHistory.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnHistory.Name = "tsbtnHistory";
+            this.tsbtnHistory.Size = new System.Drawing.Size(54, 69);
+            this.tsbtnHistory.Text = "History";
+            this.tsbtnHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnHistory.Visible = false;
+            // 
+            // tsbtnMyReservations
+            // 
+            this.tsbtnMyReservations.AccessibleName = "UserReservations";
+            this.tsbtnMyReservations.Image = global::Hotel_App.Properties.Resources.reservations;
+            this.tsbtnMyReservations.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnMyReservations.Name = "tsbtnMyReservations";
+            this.tsbtnMyReservations.Size = new System.Drawing.Size(97, 69);
+            this.tsbtnMyReservations.Text = "My Reservations";
+            this.tsbtnMyReservations.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnMyReservations.Visible = false;
+            // 
+            // tsbtnEditProfile
+            // 
+            this.tsbtnEditProfile.AccessibleName = "EditProfile";
+            this.tsbtnEditProfile.Image = global::Hotel_App.Properties.Resources.edit_profile;
+            this.tsbtnEditProfile.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnEditProfile.Name = "tsbtnEditProfile";
+            this.tsbtnEditProfile.Size = new System.Drawing.Size(68, 69);
+            this.tsbtnEditProfile.Text = "Edit Profile";
+            this.tsbtnEditProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnEditProfile.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 80);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(196, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "*select row and press \"Delete\" to delete";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 287);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnUpdateRoom);
             this.Controls.Add(this.btnAddRoom);
             this.Controls.Add(this.dgvRooms);
             this.Controls.Add(this.tsMainMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.Text = "Hotel";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -308,6 +326,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnAddRoom;
         private System.Windows.Forms.Button btnUpdateRoom;
+        private System.Windows.Forms.Label label1;
     }
 }
 
