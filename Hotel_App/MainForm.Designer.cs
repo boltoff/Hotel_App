@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tsMainMenu = new System.Windows.Forms.ToolStrip();
             this.tsbtnExit = new System.Windows.Forms.ToolStripButton();
             this.tssp = new System.Windows.Forms.ToolStripSeparator();
@@ -50,6 +50,8 @@
             this.hotel_BaseDataSet = new Hotel_App.Hotel_BaseDataSet();
             this.roomSelectTableAdapter = new Hotel_App.Hotel_BaseDataSetTableAdapters.RoomSelectTableAdapter();
             this.procedures = new Hotel_App.Hotel_BaseDataSetTableAdapters.procedures();
+            this.btnAddRoom = new System.Windows.Forms.Button();
+            this.btnUpdateRoom = new System.Windows.Forms.Button();
             this.tsMainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRooms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomSelectBindingSource)).BeginInit();
@@ -176,14 +178,14 @@
             this.optionsDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn});
             this.dgvRooms.DataSource = this.roomSelectBindingSource;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRooms.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRooms.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRooms.GridColor = System.Drawing.SystemColors.Control;
             this.dgvRooms.Location = new System.Drawing.Point(0, 99);
             this.dgvRooms.Name = "dgvRooms";
@@ -242,11 +244,31 @@
             // 
             this.roomSelectTableAdapter.ClearBeforeFill = true;
             // 
+            // btnAddRoom
+            // 
+            this.btnAddRoom.Location = new System.Drawing.Point(391, 75);
+            this.btnAddRoom.Name = "btnAddRoom";
+            this.btnAddRoom.Size = new System.Drawing.Size(75, 23);
+            this.btnAddRoom.TabIndex = 2;
+            this.btnAddRoom.Text = "Add Room";
+            this.btnAddRoom.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateRoom
+            // 
+            this.btnUpdateRoom.Location = new System.Drawing.Point(472, 75);
+            this.btnUpdateRoom.Name = "btnUpdateRoom";
+            this.btnUpdateRoom.Size = new System.Drawing.Size(82, 23);
+            this.btnUpdateRoom.TabIndex = 3;
+            this.btnUpdateRoom.Text = "Update Room";
+            this.btnUpdateRoom.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 287);
+            this.Controls.Add(this.btnUpdateRoom);
+            this.Controls.Add(this.btnAddRoom);
             this.Controls.Add(this.dgvRooms);
             this.Controls.Add(this.tsMainMenu);
             this.Name = "MainForm";
@@ -284,6 +306,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn maxPeopleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn optionsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnAddRoom;
+        private System.Windows.Forms.Button btnUpdateRoom;
     }
 }
 
