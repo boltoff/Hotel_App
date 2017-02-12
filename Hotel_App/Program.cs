@@ -17,7 +17,7 @@ namespace Hotel_App
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Authorization auth = new Authorization();
+            AuthorizationForm auth = new AuthorizationForm();
             auth.ShowDialog();
             if (auth.logIn)
             {

@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Hotel_App
 {
-    public partial class AddUpdateRoom : Form
+    public partial class AddUpdateGuestForm : Form
     {
         public bool changetype = false;
         public int updateid;
-        public AddUpdateRoom()
+        public AddUpdateGuestForm()
         {
             InitializeComponent();
         }
@@ -28,19 +28,28 @@ namespace Hotel_App
         {
             if (changetype)
             {
-                procedures.RoomUpdate(updateid, tbRoomType.Text,
-                    int.Parse(tbMaxPeople.Text),
-                    rtbOptions.Text,
-                    decimal.Parse(tbPrice.Text));
+                procedures.GuestUpdate(updateid, tbFName.Text,
+                    tbLName.Text,
+                    tbAddress.Text,
+                    tbCity.Text,
+                    tbState.Text,
+                    tbCountry.Text,
+                    tbPhone.Text,
+                    tbEmail.Text);
                 this.Close();
             }
             else
             {
                 int? id = null;
-                procedures.RoomInsert(tbRoomType.Text, 
-                    int.Parse(tbMaxPeople.Text), 
-                    rtbOptions.Text, 
-                    decimal.Parse(tbPrice.Text), ref id);
+                procedures.GuestInsert(tbFName.Text,
+                    tbLName.Text,
+                    tbAddress.Text,
+                    tbCity.Text,
+                    tbState.Text,
+                    tbCountry.Text,
+                    tbPhone.Text,
+                    tbEmail.Text,
+                    ref id);
                 this.Close();
             }
         }

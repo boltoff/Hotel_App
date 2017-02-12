@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Hotel_App
 {
-    public partial class Authorization : Form
+    public partial class AuthorizationForm : Form
     {
         public bool logIn = false;
 
-        public Authorization()
+        public AuthorizationForm()
         {
             InitializeComponent();
         }

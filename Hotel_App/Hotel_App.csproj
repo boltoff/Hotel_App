@@ -46,17 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddUpdateRoom.cs">
+    <Compile Include="AddUpdateGuestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddUpdateRoom.Designer.cs">
-      <DependentUpon>AddUpdateRoom.cs</DependentUpon>
+    <Compile Include="AddUpdateGuestForm.Designer.cs">
+      <DependentUpon>AddUpdateGuestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Authorization.cs">
+    <Compile Include="AddUpdateRoomForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Authorization.Designer.cs">
-      <DependentUpon>Authorization.cs</DependentUpon>
+    <Compile Include="AddUpdateRoomForm.Designer.cs">
+      <DependentUpon>AddUpdateRoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorizationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuthorizationForm.Designer.cs">
+      <DependentUpon>AuthorizationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GuestsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuestsForm.Designer.cs">
+      <DependentUpon>GuestsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Hotel_BaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -71,12 +83,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReservationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReservationsForm.Designer.cs">
+      <DependentUpon>ReservationsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
-    <EmbeddedResource Include="AddUpdateRoom.resx">
-      <DependentUpon>AddUpdateRoom.cs</DependentUpon>
+    <EmbeddedResource Include="AddUpdateGuestForm.resx">
+      <DependentUpon>AddUpdateGuestForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Authorization.resx">
-      <DependentUpon>Authorization.cs</DependentUpon>
+    <EmbeddedResource Include="AddUpdateRoomForm.resx">
+      <DependentUpon>AddUpdateRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AuthorizationForm.resx">
+      <DependentUpon>AuthorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuestsForm.resx">
+      <DependentUpon>GuestsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -91,6 +115,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReservationsForm.resx">
+      <DependentUpon>ReservationsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Hotel_BaseDataSet.xsc">
       <DependentUpon>Hotel_BaseDataSet.xsd</DependentUpon>
     </None>
@@ -135,6 +162,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plusguest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updateguest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addreservation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updatereservation.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

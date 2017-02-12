@@ -42,6 +42,7 @@ namespace Hotel_App
 
             if (User.permissionServicesList.Contains(btnAddRoom.AccessibleName) || User.permissionServicesList.Contains(btnUpdateRoom.AccessibleName))
             {
+                lbDeleteDesc.Visible = true;
                 btnAddRoom.Visible = true;
                 btnUpdateRoom.Visible = true;
             }
@@ -80,7 +81,7 @@ namespace Hotel_App
 
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
-            AddUpdateRoom addroomform = new AddUpdateRoom();
+            AddUpdateRoomForm addroomform = new AddUpdateRoomForm();
             addroomform.ShowDialog();
             this.roomSelectTableAdapter.Fill(this.hotel_BaseDataSet.RoomSelect);
         }
@@ -94,7 +95,7 @@ namespace Hotel_App
                 cellsvalues.Add(dgvRooms.Rows[rowindex].Cells[i].Value.ToString());
             }
 
-            AddUpdateRoom updateRoomForm = new AddUpdateRoom();
+            AddUpdateRoomForm updateRoomForm = new AddUpdateRoomForm();
             updateRoomForm.Text = "Update Room";
             updateRoomForm.btnOK.Text = "Update";
             updateRoomForm.updateid = int.Parse(cellsvalues[0]);
@@ -106,6 +107,18 @@ namespace Hotel_App
             updateRoomForm.ShowDialog();
             this.roomSelectTableAdapter.Fill(this.hotel_BaseDataSet.RoomSelect);
 
+        }
+
+        private void tsbtnGuests_Click(object sender, EventArgs e)
+        {
+            GuestsForm gform = new GuestsForm();
+            gform.ShowDialog();
+        }
+
+        private void tsbtnReservations_Click(object sender, EventArgs e)
+        {
+            ReservationsForm resForm = new ReservationsForm();
+            resForm.ShowDialog();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Hotel_App
 {
-    partial class AddUpdateRoom
+    partial class AddUpdateRoomForm
     {
         /// <summary>
         /// Required designer variable.
