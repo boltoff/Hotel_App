@@ -82,11 +82,11 @@
             // lbRoomType
             // 
             this.lbRoomType.AutoSize = true;
-            this.lbRoomType.Location = new System.Drawing.Point(12, 104);
+            this.lbRoomType.Location = new System.Drawing.Point(39, 104);
             this.lbRoomType.Name = "lbRoomType";
-            this.lbRoomType.Size = new System.Drawing.Size(65, 13);
+            this.lbRoomType.Size = new System.Drawing.Size(38, 13);
             this.lbRoomType.TabIndex = 9;
-            this.lbRoomType.Text = "Room Type:";
+            this.lbRoomType.Text = "Room:";
             // 
             // lbGuestCount
             // 

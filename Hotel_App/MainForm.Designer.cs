@@ -200,6 +200,7 @@
             this.dgvRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRooms.Size = new System.Drawing.Size(566, 176);
             this.dgvRooms.TabIndex = 1;
+            this.dgvRooms.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvRooms_CellMouseDoubleClick);
             this.dgvRooms.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvRooms_UserDeletedRow);
             this.dgvRooms.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvRooms_UserDeletingRow);
             // 

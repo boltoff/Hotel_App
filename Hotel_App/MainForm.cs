@@ -154,5 +154,12 @@ namespace Hotel_App
             updateprofileform.btnOK.Text = "Update";
             updateprofileform.ShowDialog();
         }
+        private void dgvRooms_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int rowindex = dgvRooms.CurrentCell.RowIndex;
+            AddUpdateReservationForm addMyReservationForm = new AddUpdateReservationForm();
+            addMyReservationForm.cmbRoomType.Items.Add(dgvRooms.Rows[rowindex].Cells[1].Value.ToString());
+            addMyReservationForm.ShowDialog();
+        }
     }
 }

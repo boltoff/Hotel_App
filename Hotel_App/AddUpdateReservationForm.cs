@@ -31,7 +31,7 @@ namespace Hotel_App
 
             foreach (DataRow r in hotel_BaseDataSet.RoomSelect.Rows)
             {
-                if (changetype)
+                if (changetype || User.userTypeID == 1)
                 {
                     if (r.Field<string>("RoomType") != cmbRoomType.Items[0].ToString())
                     {
@@ -116,8 +116,24 @@ namespace Hotel_App
                     procedures.ReservationInsert(dtpCheckIn.Value,
                         dtpCheckOut.Value,
                         (int)nudGuestCount.Value,
-                        roomId, guestId, ref id);
+                        roomId, 
+                        guestId, 
+                        ref id);
 
+                    this.Close();
+                }
+                // if its Guest
+                else
+                {
+                    int? id = null;
+                    RoomId_GuestId(out roomId, out guestId);
+                    procedures.ReservationInsert(
+                        dtpCheckIn.Value,
+                        dtpCheckOut.Value,
+                        (int)nudGuestCount.Value,
+                        roomId,
+                        User.guestID,
+                        ref id);
                     this.Close();
                 }
             }

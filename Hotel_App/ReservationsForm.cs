@@ -39,7 +39,7 @@ namespace Hotel_App
             }
 
             AddUpdateReservationForm updateReservationForm = new AddUpdateReservationForm();
-            updateReservationForm.Text = "Update Guest";
+            updateReservationForm.Text = "Update Reservation";
             updateReservationForm.btnOK.Text = "Update";
             updateReservationForm.updateid = int.Parse(cellsvalues[0]);
             updateReservationForm.nudGuestCount.Text = cellsvalues[3];
