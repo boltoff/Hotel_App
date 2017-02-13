@@ -24,6 +24,9 @@ namespace Hotel_App
                 AddUpdateGuestForm addnewguest = new AddUpdateGuestForm();
                 addnewguest.tbFName.Text = User.fName;
                 addnewguest.tbLName.Text = User.lName;
+                addnewguest.Text = "Profile";
+                addnewguest.btnCancel.Visible = false;
+                addnewguest.btnOK.Text = "OK";
                 addnewguest.ShowDialog();
 
             }

@@ -245,7 +245,6 @@
         private System.Windows.Forms.Label lbCity;
         private System.Windows.Forms.Label lbAddress;
         private System.Windows.Forms.Label lbLName;
-        private System.Windows.Forms.Button btnCancel;
         public System.Windows.Forms.TextBox tbFName;
         public System.Windows.Forms.TextBox tbLName;
         public System.Windows.Forms.TextBox tbAddress;
@@ -255,5 +254,6 @@
         public System.Windows.Forms.TextBox tbPhone;
         public System.Windows.Forms.TextBox tbEmail;
         public System.Windows.Forms.Button btnOK;
+        public System.Windows.Forms.Button btnCancel;
     }
 }

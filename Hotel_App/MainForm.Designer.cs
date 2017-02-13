@@ -32,19 +32,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tsMainMenu = new System.Windows.Forms.ToolStrip();
-            this.tssp = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tslbUserDesc = new System.Windows.Forms.ToolStripLabel();
-            this.dgvRooms = new System.Windows.Forms.DataGridView();
-            this.btnAddRoom = new System.Windows.Forms.Button();
-            this.btnUpdateRoom = new System.Windows.Forms.Button();
-            this.lbDeleteDesc = new System.Windows.Forms.Label();
             this.tsbtnExit = new System.Windows.Forms.ToolStripButton();
+            this.tssp = new System.Windows.Forms.ToolStripSeparator();
             this.tsbtnGuests = new System.Windows.Forms.ToolStripButton();
             this.tsbtnReservations = new System.Windows.Forms.ToolStripButton();
             this.tsbtnHistory = new System.Windows.Forms.ToolStripButton();
             this.tsbtnMyReservations = new System.Windows.Forms.ToolStripButton();
             this.tsbtnEditProfile = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tslbUserDesc = new System.Windows.Forms.ToolStripLabel();
+            this.dgvRooms = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maxPeopleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,8 +49,12 @@
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomSelectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hotel_BaseDataSet = new Hotel_App.Hotel_BaseDataSet();
+            this.btnAddRoom = new System.Windows.Forms.Button();
+            this.btnUpdateRoom = new System.Windows.Forms.Button();
+            this.lbDeleteDesc = new System.Windows.Forms.Label();
             this.roomSelectTableAdapter = new Hotel_App.Hotel_BaseDataSetTableAdapters.RoomSelectTableAdapter();
             this.procedures = new Hotel_App.Hotel_BaseDataSetTableAdapters.procedures();
+            this.guestSelectTableAdapter = new Hotel_App.Hotel_BaseDataSetTableAdapters.GuestSelectTableAdapter();
             this.tsMainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRooms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomSelectBindingSource)).BeginInit();
@@ -80,91 +81,6 @@
             this.tsMainMenu.TabIndex = 0;
             this.tsMainMenu.Text = "toolStrip1";
             // 
-            // tssp
-            // 
-            this.tssp.Name = "tssp";
-            this.tssp.Size = new System.Drawing.Size(6, 72);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 72);
-            // 
-            // tslbUserDesc
-            // 
-            this.tslbUserDesc.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
-            this.tslbUserDesc.Name = "tslbUserDesc";
-            this.tslbUserDesc.Size = new System.Drawing.Size(44, 69);
-            this.tslbUserDesc.Text = "null";
-            // 
-            // dgvRooms
-            // 
-            this.dgvRooms.AllowUserToAddRows = false;
-            this.dgvRooms.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvRooms.AutoGenerateColumns = false;
-            this.dgvRooms.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvRooms.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRooms.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.roomTypeDataGridViewTextBoxColumn,
-            this.maxPeopleDataGridViewTextBoxColumn,
-            this.optionsDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn});
-            this.dgvRooms.DataSource = this.roomSelectBindingSource;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRooms.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvRooms.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvRooms.Location = new System.Drawing.Point(0, 99);
-            this.dgvRooms.Name = "dgvRooms";
-            this.dgvRooms.ReadOnly = true;
-            this.dgvRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRooms.Size = new System.Drawing.Size(566, 176);
-            this.dgvRooms.TabIndex = 1;
-            this.dgvRooms.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvRooms_UserDeletedRow);
-            this.dgvRooms.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvRooms_UserDeletingRow);
-            // 
-            // btnAddRoom
-            // 
-            this.btnAddRoom.AccessibleName = "ChangeRoom";
-            this.btnAddRoom.Location = new System.Drawing.Point(391, 75);
-            this.btnAddRoom.Name = "btnAddRoom";
-            this.btnAddRoom.Size = new System.Drawing.Size(75, 23);
-            this.btnAddRoom.TabIndex = 2;
-            this.btnAddRoom.Text = "Add Room";
-            this.btnAddRoom.UseVisualStyleBackColor = true;
-            this.btnAddRoom.Visible = false;
-            this.btnAddRoom.Click += new System.EventHandler(this.btnAddRoom_Click);
-            // 
-            // btnUpdateRoom
-            // 
-            this.btnUpdateRoom.AccessibleName = "ChangeRoom";
-            this.btnUpdateRoom.Location = new System.Drawing.Point(472, 75);
-            this.btnUpdateRoom.Name = "btnUpdateRoom";
-            this.btnUpdateRoom.Size = new System.Drawing.Size(82, 23);
-            this.btnUpdateRoom.TabIndex = 3;
-            this.btnUpdateRoom.Text = "Update Room";
-            this.btnUpdateRoom.UseVisualStyleBackColor = true;
-            this.btnUpdateRoom.Visible = false;
-            this.btnUpdateRoom.Click += new System.EventHandler(this.btnUpdateRoom_Click);
-            // 
-            // lbDeleteDesc
-            // 
-            this.lbDeleteDesc.AutoSize = true;
-            this.lbDeleteDesc.Location = new System.Drawing.Point(13, 80);
-            this.lbDeleteDesc.Name = "lbDeleteDesc";
-            this.lbDeleteDesc.Size = new System.Drawing.Size(196, 13);
-            this.lbDeleteDesc.TabIndex = 4;
-            this.lbDeleteDesc.Text = "*select row and press \"Delete\" to delete";
-            this.lbDeleteDesc.Visible = false;
-            // 
             // tsbtnExit
             // 
             this.tsbtnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -176,6 +92,11 @@
             this.tsbtnExit.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.tsbtnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbtnExit.Click += new System.EventHandler(this.tsbtnExit_Click);
+            // 
+            // tssp
+            // 
+            this.tssp.Name = "tssp";
+            this.tssp.Size = new System.Drawing.Size(6, 72);
             // 
             // tsbtnGuests
             // 
@@ -234,6 +155,53 @@
             this.tsbtnEditProfile.Text = "Edit Profile";
             this.tsbtnEditProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbtnEditProfile.Visible = false;
+            this.tsbtnEditProfile.Click += new System.EventHandler(this.tsbtnEditProfile_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 72);
+            // 
+            // tslbUserDesc
+            // 
+            this.tslbUserDesc.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.tslbUserDesc.Name = "tslbUserDesc";
+            this.tslbUserDesc.Size = new System.Drawing.Size(44, 69);
+            this.tslbUserDesc.Text = "null";
+            // 
+            // dgvRooms
+            // 
+            this.dgvRooms.AllowUserToAddRows = false;
+            this.dgvRooms.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvRooms.AutoGenerateColumns = false;
+            this.dgvRooms.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvRooms.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRooms.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.roomTypeDataGridViewTextBoxColumn,
+            this.maxPeopleDataGridViewTextBoxColumn,
+            this.optionsDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn});
+            this.dgvRooms.DataSource = this.roomSelectBindingSource;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRooms.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvRooms.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvRooms.Location = new System.Drawing.Point(0, 99);
+            this.dgvRooms.Name = "dgvRooms";
+            this.dgvRooms.ReadOnly = true;
+            this.dgvRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRooms.Size = new System.Drawing.Size(566, 176);
+            this.dgvRooms.TabIndex = 1;
+            this.dgvRooms.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvRooms_UserDeletedRow);
+            this.dgvRooms.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvRooms_UserDeletingRow);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -285,9 +253,47 @@
             this.hotel_BaseDataSet.DataSetName = "Hotel_BaseDataSet";
             this.hotel_BaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // btnAddRoom
+            // 
+            this.btnAddRoom.AccessibleName = "ChangeRoom";
+            this.btnAddRoom.Location = new System.Drawing.Point(391, 75);
+            this.btnAddRoom.Name = "btnAddRoom";
+            this.btnAddRoom.Size = new System.Drawing.Size(75, 23);
+            this.btnAddRoom.TabIndex = 2;
+            this.btnAddRoom.Text = "Add Room";
+            this.btnAddRoom.UseVisualStyleBackColor = true;
+            this.btnAddRoom.Visible = false;
+            this.btnAddRoom.Click += new System.EventHandler(this.btnAddRoom_Click);
+            // 
+            // btnUpdateRoom
+            // 
+            this.btnUpdateRoom.AccessibleName = "ChangeRoom";
+            this.btnUpdateRoom.Location = new System.Drawing.Point(472, 75);
+            this.btnUpdateRoom.Name = "btnUpdateRoom";
+            this.btnUpdateRoom.Size = new System.Drawing.Size(82, 23);
+            this.btnUpdateRoom.TabIndex = 3;
+            this.btnUpdateRoom.Text = "Update Room";
+            this.btnUpdateRoom.UseVisualStyleBackColor = true;
+            this.btnUpdateRoom.Visible = false;
+            this.btnUpdateRoom.Click += new System.EventHandler(this.btnUpdateRoom_Click);
+            // 
+            // lbDeleteDesc
+            // 
+            this.lbDeleteDesc.AutoSize = true;
+            this.lbDeleteDesc.Location = new System.Drawing.Point(13, 80);
+            this.lbDeleteDesc.Name = "lbDeleteDesc";
+            this.lbDeleteDesc.Size = new System.Drawing.Size(196, 13);
+            this.lbDeleteDesc.TabIndex = 4;
+            this.lbDeleteDesc.Text = "*select row and press \"Delete\" to delete";
+            this.lbDeleteDesc.Visible = false;
+            // 
             // roomSelectTableAdapter
             // 
             this.roomSelectTableAdapter.ClearBeforeFill = true;
+            // 
+            // guestSelectTableAdapter
+            // 
+            this.guestSelectTableAdapter.ClearBeforeFill = true;
             // 
             // MainForm
             // 
@@ -340,6 +346,7 @@
         private System.Windows.Forms.Button btnAddRoom;
         private System.Windows.Forms.Button btnUpdateRoom;
         private System.Windows.Forms.Label lbDeleteDesc;
+        private Hotel_BaseDataSetTableAdapters.GuestSelectTableAdapter guestSelectTableAdapter;
     }
 }
 

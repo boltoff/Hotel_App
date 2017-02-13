@@ -21,7 +21,6 @@ namespace Hotel_App
         {
             // TODO: This line of code loads data into the 'hotel_BaseDataSet.GuestSelect' table. You can move, or remove it, as needed.
             this.guestSelectTableAdapter.Fill(this.hotel_BaseDataSet.GuestSelect);
-
         }
 
         private void tsbtnClose_Click(object sender, EventArgs e)
@@ -37,12 +36,14 @@ namespace Hotel_App
                 string rowguestid = dgvGuests.Rows[rowindex].Cells[0].Value.ToString();
                 procedures.GuestDelete(int.Parse(rowguestid));
 
+                this.userSelectGuestIDTableAdapter.Fill(this.hotel_BaseDataSet.UserSelectGuestID);
                 foreach (DataRow r in hotel_BaseDataSet.UserSelectGuestID.Rows)
                 {
-                    if (r.Field<string>("GuestID") == rowguestid)
-                    {
-                        procedures.UserUpdateGuestID(0, r.Field<int>("ID"));
-                    }
+                        if (r.Field<int?>("GuestID") == int.Parse(rowguestid))
+                        {
+                            procedures.UserUpdateGuestID(0, r.Field<int>("ID"));
+                            break;
+                        }
                 }
             }
             catch

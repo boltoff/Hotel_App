@@ -47,8 +47,9 @@
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guestSelectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hotel_BaseDataSet = new Hotel_App.Hotel_BaseDataSet();
-            this.guestSelectTableAdapter = new Hotel_App.Hotel_BaseDataSetTableAdapters.GuestSelectTableAdapter();
             this.procedures = new Hotel_App.Hotel_BaseDataSetTableAdapters.procedures();
+            this.guestSelectTableAdapter = new Hotel_App.Hotel_BaseDataSetTableAdapters.GuestSelectTableAdapter();
+            this.userSelectGuestIDTableAdapter = new Hotel_App.Hotel_BaseDataSetTableAdapters.UserSelectGuestIDTableAdapter();
             this.tsGuestsMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGuests)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guestSelectBindingSource)).BeginInit();
@@ -218,6 +219,10 @@
             // 
             this.guestSelectTableAdapter.ClearBeforeFill = true;
             // 
+            // userSelectGuestIDTableAdapter
+            // 
+            this.userSelectGuestIDTableAdapter.ClearBeforeFill = true;
+            // 
             // GuestsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,7 +255,7 @@
         private System.Windows.Forms.ToolStripButton tsbtnUpdateGuest;
         private System.Windows.Forms.DataGridView dgvGuests;
         private Hotel_BaseDataSet hotel_BaseDataSet;
-        private System.Windows.Forms.BindingSource guestSelectBindingSource;
+        private Hotel_BaseDataSetTableAdapters.procedures procedures;
         private Hotel_BaseDataSetTableAdapters.GuestSelectTableAdapter guestSelectTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fNameDataGridViewTextBoxColumn;
@@ -261,6 +266,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn countryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private Hotel_BaseDataSetTableAdapters.procedures procedures;
+        private System.Windows.Forms.BindingSource guestSelectBindingSource;
+        private Hotel_BaseDataSetTableAdapters.UserSelectGuestIDTableAdapter userSelectGuestIDTableAdapter;
     }
 }

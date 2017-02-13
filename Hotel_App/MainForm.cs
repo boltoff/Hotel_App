@@ -126,5 +126,33 @@ namespace Hotel_App
             HistoryForm hisform = new HistoryForm();
             hisform.ShowDialog();
         }
+
+        private void tsbtnEditProfile_Click(object sender, EventArgs e)
+        {
+            AddUpdateGuestForm updateprofileform = new AddUpdateGuestForm();
+            this.guestSelectTableAdapter.Fill(this.hotel_BaseDataSet.GuestSelect);
+            foreach (DataRow r in hotel_BaseDataSet.GuestSelect.Rows)
+            {
+                if (r.Field<int>("ID") == User.guestID)
+                {
+                    updateprofileform.tbFName.Text = r.Field<string>("FName");
+                    updateprofileform.tbLName.Text = r.Field<string>("LName");
+                    updateprofileform.tbAddress.Text = r.Field<string>("Address");
+                    updateprofileform.tbCity.Text = r.Field<string>("City");
+                    updateprofileform.tbState.Text = r.Field<string>("State");
+                    updateprofileform.tbCountry.Text = r.Field<string>("Country");
+                    updateprofileform.tbPhone.Text = r.Field<string>("Phone");
+                    updateprofileform.tbEmail.Text = r.Field<string>("Email");
+                    break;
+                }
+            }
+            updateprofileform.updateid = User.guestID;
+            updateprofileform.changetype = true;
+            updateprofileform.tbFName.Text = User.fName;
+            updateprofileform.tbLName.Text = User.lName;
+            updateprofileform.Text = "Update Profile";
+            updateprofileform.btnOK.Text = "Update";
+            updateprofileform.ShowDialog();
+        }
     }
 }
