@@ -52,6 +52,12 @@
     <Compile Include="AddUpdateGuestForm.Designer.cs">
       <DependentUpon>AddUpdateGuestForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddUpdateReservationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUpdateReservationForm.Designer.cs">
+      <DependentUpon>AddUpdateReservationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddUpdateRoomForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     <Compile Include="User.cs" />
     <EmbeddedResource Include="AddUpdateGuestForm.resx">
       <DependentUpon>AddUpdateGuestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddUpdateReservationForm.resx">
+      <DependentUpon>AddUpdateReservationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddUpdateRoomForm.resx">
       <DependentUpon>AddUpdateRoomForm.cs</DependentUpon>
