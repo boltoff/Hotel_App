@@ -34,7 +34,16 @@ namespace Hotel_App
             try
             {
                 int rowindex = dgvGuests.CurrentCell.RowIndex;
-                procedures.GuestDelete(int.Parse(dgvGuests.Rows[rowindex].Cells[0].Value.ToString()));
+                string rowguestid = dgvGuests.Rows[rowindex].Cells[0].Value.ToString();
+                procedures.GuestDelete(int.Parse(rowguestid));
+
+                foreach (DataRow r in hotel_BaseDataSet.UserSelectGuestID.Rows)
+                {
+                    if (r.Field<string>("GuestID") == rowguestid)
+                    {
+                        procedures.UserUpdateGuestID(0, r.Field<int>("ID"));
+                    }
+                }
             }
             catch
             {

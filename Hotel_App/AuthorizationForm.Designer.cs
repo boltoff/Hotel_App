@@ -58,7 +58,7 @@
             this.tbLogin.Name = "tbLogin";
             this.tbLogin.Size = new System.Drawing.Size(245, 20);
             this.tbLogin.TabIndex = 1;
-            this.tbLogin.Text = "admin";
+            this.tbLogin.Text = "guest";
             // 
             // tbPassword
             // 
@@ -66,7 +66,7 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(245, 20);
             this.tbPassword.TabIndex = 2;
-            this.tbPassword.Text = "admin";
+            this.tbPassword.Text = "guest";
             // 
             // lbPassword
             // 
@@ -121,7 +121,7 @@
             this.hotel_BaseDataSet.DataSetName = "Hotel_BaseDataSet";
             this.hotel_BaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Authorization
+            // AuthorizationForm
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,7 +136,7 @@
             this.Controls.Add(this.tbLogin);
             this.Controls.Add(this.pbLock);
             this.MaximizeBox = false;
-            this.Name = "Authorization";
+            this.Name = "AuthorizationForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Authorization";

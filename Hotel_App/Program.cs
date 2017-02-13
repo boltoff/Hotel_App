@@ -19,6 +19,14 @@ namespace Hotel_App
 
             AuthorizationForm auth = new AuthorizationForm();
             auth.ShowDialog();
+            if (User.guestID == 0 && User.userTypeID == 1)
+            {
+                AddUpdateGuestForm addnewguest = new AddUpdateGuestForm();
+                addnewguest.tbFName.Text = User.fName;
+                addnewguest.tbLName.Text = User.lName;
+                addnewguest.ShowDialog();
+
+            }
             if (auth.logIn)
             {
                 Application.Run(new MainForm());

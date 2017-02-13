@@ -40,7 +40,7 @@ namespace Hotel_App
             }
             else
             {
-                int? id = null;
+                int? guestid = null;
                 procedures.GuestInsert(tbFName.Text,
                     tbLName.Text,
                     tbAddress.Text,
@@ -49,7 +49,12 @@ namespace Hotel_App
                     tbCountry.Text,
                     tbPhone.Text,
                     tbEmail.Text,
-                    ref id);
+                    ref guestid);
+                if (User.userTypeID == 1)
+                {
+                    procedures.UserUpdateGuestID(guestid, User.userID);
+                }
+
                 this.Close();
             }
         }
