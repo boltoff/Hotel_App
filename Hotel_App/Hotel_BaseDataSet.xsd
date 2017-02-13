@@ -100,6 +100,27 @@
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HistoryViewTableAdapter" GeneratorDataComponentClassName="HistoryViewTableAdapter" Name="HistoryView" UserDataComponentName="HistoryViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Hotel_BaseConnectionString (Settings)" DbObjectName="Hotel_Base.dbo.HistoryView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, CheckInDate, CheckOutDate, GuestsCount, RoomType, GuestName FROM dbo.HistoryView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="CheckInDate" DataSetColumn="CheckInDate" />
+              <Mapping SourceColumn="CheckOutDate" DataSetColumn="CheckOutDate" />
+              <Mapping SourceColumn="GuestsCount" DataSetColumn="GuestsCount" />
+              <Mapping SourceColumn="RoomType" DataSetColumn="RoomType" />
+              <Mapping SourceColumn="GuestName" DataSetColumn="GuestName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources>
           <DbSource ConnectionRef="Hotel_BaseConnectionString (Settings)" DbObjectName="Hotel_Base.dbo.UserGet" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="UserGet" MethodsParameterType="CLR" Modifier="Public" Name="UserGet" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="UserGet">
@@ -272,7 +293,7 @@
   <xs:element name="Hotel_BaseDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Hotel_BaseDataSet" msprop:Generator_UserDSName="Hotel_BaseDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="PermissionList" msprop:Generator_TableClassName="PermissionListDataTable" msprop:Generator_TableVarName="tablePermissionList" msprop:Generator_TablePropName="PermissionList" msprop:Generator_RowDeletingName="PermissionListRowDeleting" msprop:Generator_RowChangingName="PermissionListRowChanging" msprop:Generator_RowEvHandlerName="PermissionListRowChangeEventHandler" msprop:Generator_RowDeletedName="PermissionListRowDeleted" msprop:Generator_UserTableName="PermissionList" msprop:Generator_RowChangedName="PermissionListRowChanged" msprop:Generator_RowEvArgName="PermissionListRowChangeEvent" msprop:Generator_RowClassName="PermissionListRow">
+        <xs:element name="PermissionList" msprop:Generator_TableClassName="PermissionListDataTable" msprop:Generator_TableVarName="tablePermissionList" msprop:Generator_RowChangedName="PermissionListRowChanged" msprop:Generator_TablePropName="PermissionList" msprop:Generator_RowDeletingName="PermissionListRowDeleting" msprop:Generator_RowChangingName="PermissionListRowChanging" msprop:Generator_RowEvHandlerName="PermissionListRowChangeEventHandler" msprop:Generator_RowDeletedName="PermissionListRowDeleted" msprop:Generator_RowClassName="PermissionListRow" msprop:Generator_UserTableName="PermissionList" msprop:Generator_RowEvArgName="PermissionListRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ServiceID" msprop:Generator_ColumnVarNameInTable="columnServiceID" msprop:Generator_ColumnPropNameInRow="ServiceID" msprop:Generator_ColumnPropNameInTable="ServiceIDColumn" msprop:Generator_UserColumnName="ServiceID" type="xs:int" />
@@ -293,7 +314,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="RoomSelect" msprop:Generator_TableClassName="RoomSelectDataTable" msprop:Generator_TableVarName="tableRoomSelect" msprop:Generator_TablePropName="RoomSelect" msprop:Generator_RowDeletingName="RoomSelectRowDeleting" msprop:Generator_RowChangingName="RoomSelectRowChanging" msprop:Generator_RowEvHandlerName="RoomSelectRowChangeEventHandler" msprop:Generator_RowDeletedName="RoomSelectRowDeleted" msprop:Generator_UserTableName="RoomSelect" msprop:Generator_RowChangedName="RoomSelectRowChanged" msprop:Generator_RowEvArgName="RoomSelectRowChangeEvent" msprop:Generator_RowClassName="RoomSelectRow">
+        <xs:element name="RoomSelect" msprop:Generator_TableClassName="RoomSelectDataTable" msprop:Generator_TableVarName="tableRoomSelect" msprop:Generator_RowChangedName="RoomSelectRowChanged" msprop:Generator_TablePropName="RoomSelect" msprop:Generator_RowDeletingName="RoomSelectRowDeleting" msprop:Generator_RowChangingName="RoomSelectRowChanging" msprop:Generator_RowEvHandlerName="RoomSelectRowChangeEventHandler" msprop:Generator_RowDeletedName="RoomSelectRowDeleted" msprop:Generator_RowClassName="RoomSelectRow" msprop:Generator_UserTableName="RoomSelect" msprop:Generator_RowEvArgName="RoomSelectRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -316,7 +337,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GuestSelect" msprop:Generator_TableClassName="GuestSelectDataTable" msprop:Generator_TableVarName="tableGuestSelect" msprop:Generator_RowChangedName="GuestSelectRowChanged" msprop:Generator_TablePropName="GuestSelect" msprop:Generator_RowDeletingName="GuestSelectRowDeleting" msprop:Generator_RowChangingName="GuestSelectRowChanging" msprop:Generator_RowEvHandlerName="GuestSelectRowChangeEventHandler" msprop:Generator_RowDeletedName="GuestSelectRowDeleted" msprop:Generator_RowClassName="GuestSelectRow" msprop:Generator_UserTableName="GuestSelect" msprop:Generator_RowEvArgName="GuestSelectRowChangeEvent">
+        <xs:element name="GuestSelect" msprop:Generator_TableClassName="GuestSelectDataTable" msprop:Generator_TableVarName="tableGuestSelect" msprop:Generator_TablePropName="GuestSelect" msprop:Generator_RowDeletingName="GuestSelectRowDeleting" msprop:Generator_RowChangingName="GuestSelectRowChanging" msprop:Generator_RowEvHandlerName="GuestSelectRowChangeEventHandler" msprop:Generator_RowDeletedName="GuestSelectRowDeleted" msprop:Generator_UserTableName="GuestSelect" msprop:Generator_RowChangedName="GuestSelectRowChanged" msprop:Generator_RowEvArgName="GuestSelectRowChangeEvent" msprop:Generator_RowClassName="GuestSelectRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -379,7 +400,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ReservationSelect" msprop:Generator_TableClassName="ReservationSelectDataTable" msprop:Generator_TableVarName="tableReservationSelect" msprop:Generator_TablePropName="ReservationSelect" msprop:Generator_RowDeletingName="ReservationSelectRowDeleting" msprop:Generator_RowChangingName="ReservationSelectRowChanging" msprop:Generator_RowEvHandlerName="ReservationSelectRowChangeEventHandler" msprop:Generator_RowDeletedName="ReservationSelectRowDeleted" msprop:Generator_UserTableName="ReservationSelect" msprop:Generator_RowChangedName="ReservationSelectRowChanged" msprop:Generator_RowEvArgName="ReservationSelectRowChangeEvent" msprop:Generator_RowClassName="ReservationSelectRow">
+        <xs:element name="ReservationSelect" msprop:Generator_TableClassName="ReservationSelectDataTable" msprop:Generator_TableVarName="tableReservationSelect" msprop:Generator_RowChangedName="ReservationSelectRowChanged" msprop:Generator_TablePropName="ReservationSelect" msprop:Generator_RowDeletingName="ReservationSelectRowDeleting" msprop:Generator_RowChangingName="ReservationSelectRowChanging" msprop:Generator_RowEvHandlerName="ReservationSelectRowChangeEventHandler" msprop:Generator_RowDeletedName="ReservationSelectRowDeleted" msprop:Generator_RowClassName="ReservationSelectRow" msprop:Generator_UserTableName="ReservationSelect" msprop:Generator_RowEvArgName="ReservationSelectRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -404,6 +425,30 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="HistoryView" msprop:Generator_TableClassName="HistoryViewDataTable" msprop:Generator_TableVarName="tableHistoryView" msprop:Generator_TablePropName="HistoryView" msprop:Generator_RowDeletingName="HistoryViewRowDeleting" msprop:Generator_RowChangingName="HistoryViewRowChanging" msprop:Generator_RowEvHandlerName="HistoryViewRowChangeEventHandler" msprop:Generator_RowDeletedName="HistoryViewRowDeleted" msprop:Generator_UserTableName="HistoryView" msprop:Generator_RowChangedName="HistoryViewRowChanged" msprop:Generator_RowEvArgName="HistoryViewRowChangeEvent" msprop:Generator_RowClassName="HistoryViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="CheckInDate" msprop:Generator_ColumnVarNameInTable="columnCheckInDate" msprop:Generator_ColumnPropNameInRow="CheckInDate" msprop:Generator_ColumnPropNameInTable="CheckInDateColumn" msprop:Generator_UserColumnName="CheckInDate" type="xs:dateTime" />
+              <xs:element name="CheckOutDate" msprop:Generator_ColumnVarNameInTable="columnCheckOutDate" msprop:Generator_ColumnPropNameInRow="CheckOutDate" msprop:Generator_ColumnPropNameInTable="CheckOutDateColumn" msprop:Generator_UserColumnName="CheckOutDate" type="xs:dateTime" />
+              <xs:element name="GuestsCount" msprop:Generator_ColumnVarNameInTable="columnGuestsCount" msprop:Generator_ColumnPropNameInRow="GuestsCount" msprop:Generator_ColumnPropNameInTable="GuestsCountColumn" msprop:Generator_UserColumnName="GuestsCount" type="xs:int" />
+              <xs:element name="RoomType" msprop:Generator_ColumnVarNameInTable="columnRoomType" msprop:Generator_ColumnPropNameInRow="RoomType" msprop:Generator_ColumnPropNameInTable="RoomTypeColumn" msprop:Generator_UserColumnName="RoomType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GuestName" msprop:Generator_ColumnVarNameInTable="columnGuestName" msprop:Generator_ColumnPropNameInRow="GuestName" msprop:Generator_ColumnPropNameInTable="GuestNameColumn" msprop:Generator_UserColumnName="GuestName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -416,6 +461,10 @@
     </xs:unique>
     <xs:unique name="ReservationSelect_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:ReservationSelect" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="HistoryView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:HistoryView" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
   </xs:element>

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GuestsForm));
             this.tsGuestsMenu = new System.Windows.Forms.ToolStrip();
             this.tsbtnClose = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -106,6 +107,7 @@
             // 
             // dgvGuests
             // 
+            this.dgvGuests.AllowUserToAddRows = false;
             this.dgvGuests.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGuests.AutoGenerateColumns = false;
             this.dgvGuests.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
@@ -123,6 +125,8 @@
             this.dgvGuests.DataSource = this.guestSelectBindingSource;
             this.dgvGuests.Location = new System.Drawing.Point(0, 75);
             this.dgvGuests.Name = "dgvGuests";
+            this.dgvGuests.ReadOnly = true;
+            this.dgvGuests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGuests.Size = new System.Drawing.Size(852, 232);
             this.dgvGuests.TabIndex = 1;
             this.dgvGuests.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvGuests_UserDeletedRow);
@@ -141,6 +145,7 @@
             this.fNameDataGridViewTextBoxColumn.DataPropertyName = "FName";
             this.fNameDataGridViewTextBoxColumn.HeaderText = "FName";
             this.fNameDataGridViewTextBoxColumn.Name = "fNameDataGridViewTextBoxColumn";
+            this.fNameDataGridViewTextBoxColumn.ReadOnly = true;
             this.fNameDataGridViewTextBoxColumn.Width = 66;
             // 
             // lNameDataGridViewTextBoxColumn
@@ -148,6 +153,7 @@
             this.lNameDataGridViewTextBoxColumn.DataPropertyName = "LName";
             this.lNameDataGridViewTextBoxColumn.HeaderText = "LName";
             this.lNameDataGridViewTextBoxColumn.Name = "lNameDataGridViewTextBoxColumn";
+            this.lNameDataGridViewTextBoxColumn.ReadOnly = true;
             this.lNameDataGridViewTextBoxColumn.Width = 66;
             // 
             // addressDataGridViewTextBoxColumn
@@ -155,6 +161,7 @@
             this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
             this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
             this.addressDataGridViewTextBoxColumn.Width = 70;
             // 
             // cityDataGridViewTextBoxColumn
@@ -162,6 +169,7 @@
             this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
             this.cityDataGridViewTextBoxColumn.HeaderText = "City";
             this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
+            this.cityDataGridViewTextBoxColumn.ReadOnly = true;
             this.cityDataGridViewTextBoxColumn.Width = 49;
             // 
             // stateDataGridViewTextBoxColumn
@@ -169,6 +177,7 @@
             this.stateDataGridViewTextBoxColumn.DataPropertyName = "State";
             this.stateDataGridViewTextBoxColumn.HeaderText = "State";
             this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
+            this.stateDataGridViewTextBoxColumn.ReadOnly = true;
             this.stateDataGridViewTextBoxColumn.Width = 57;
             // 
             // countryDataGridViewTextBoxColumn
@@ -176,6 +185,7 @@
             this.countryDataGridViewTextBoxColumn.DataPropertyName = "Country";
             this.countryDataGridViewTextBoxColumn.HeaderText = "Country";
             this.countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
+            this.countryDataGridViewTextBoxColumn.ReadOnly = true;
             this.countryDataGridViewTextBoxColumn.Width = 68;
             // 
             // phoneDataGridViewTextBoxColumn
@@ -183,6 +193,7 @@
             this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
             this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
             this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
             this.phoneDataGridViewTextBoxColumn.Width = 63;
             // 
             // emailDataGridViewTextBoxColumn
@@ -190,6 +201,7 @@
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             this.emailDataGridViewTextBoxColumn.Width = 57;
             // 
             // guestSelectBindingSource
@@ -214,6 +226,7 @@
             this.Controls.Add(this.dgvGuests);
             this.Controls.Add(this.tsGuestsMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "GuestsForm";
             this.Text = "Guests";

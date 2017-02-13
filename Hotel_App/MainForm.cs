@@ -120,5 +120,11 @@ namespace Hotel_App
             ReservationsForm resForm = new ReservationsForm();
             resForm.ShowDialog();
         }
+
+        private void tsbtnHistory_Click(object sender, EventArgs e)
+        {
+            HistoryForm hisform = new HistoryForm();
+            hisform.ShowDialog();
+        }
     }
 }

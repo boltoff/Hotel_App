@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReservationsForm));
             this.tsReservationMenu = new System.Windows.Forms.ToolStrip();
             this.tsbtnClose = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -45,6 +46,7 @@
             this.reservationSelectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hotel_BaseDataSet = new Hotel_App.Hotel_BaseDataSet();
             this.reservationSelectTableAdapter = new Hotel_App.Hotel_BaseDataSetTableAdapters.ReservationSelectTableAdapter();
+            this.procedures = new Hotel_App.Hotel_BaseDataSetTableAdapters.procedures();
             this.tsReservationMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservations)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationSelectBindingSource)).BeginInit();
@@ -89,6 +91,7 @@
             this.tsbtnAddReservation.Size = new System.Drawing.Size(97, 69);
             this.tsbtnAddReservation.Text = "Add Reservation";
             this.tsbtnAddReservation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnAddReservation.Click += new System.EventHandler(this.tsbtnAddReservation_Click);
             // 
             // tsbtnUpdateReservation
             // 
@@ -102,6 +105,7 @@
             // 
             // dgvReservations
             // 
+            this.dgvReservations.AllowUserToAddRows = false;
             this.dgvReservations.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvReservations.AutoGenerateColumns = false;
             this.dgvReservations.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
@@ -117,8 +121,12 @@
             this.dgvReservations.DataSource = this.reservationSelectBindingSource;
             this.dgvReservations.Location = new System.Drawing.Point(0, 76);
             this.dgvReservations.Name = "dgvReservations";
+            this.dgvReservations.ReadOnly = true;
+            this.dgvReservations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvReservations.Size = new System.Drawing.Size(635, 228);
             this.dgvReservations.TabIndex = 1;
+            this.dgvReservations.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvReservations_UserDeletedRow);
+            this.dgvReservations.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvReservations_UserDeletingRow);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -133,6 +141,7 @@
             this.checkInDateDataGridViewTextBoxColumn.DataPropertyName = "CheckInDate";
             this.checkInDateDataGridViewTextBoxColumn.HeaderText = "CheckInDate";
             this.checkInDateDataGridViewTextBoxColumn.Name = "checkInDateDataGridViewTextBoxColumn";
+            this.checkInDateDataGridViewTextBoxColumn.ReadOnly = true;
             this.checkInDateDataGridViewTextBoxColumn.Width = 95;
             // 
             // checkOutDateDataGridViewTextBoxColumn
@@ -140,6 +149,7 @@
             this.checkOutDateDataGridViewTextBoxColumn.DataPropertyName = "CheckOutDate";
             this.checkOutDateDataGridViewTextBoxColumn.HeaderText = "CheckOutDate";
             this.checkOutDateDataGridViewTextBoxColumn.Name = "checkOutDateDataGridViewTextBoxColumn";
+            this.checkOutDateDataGridViewTextBoxColumn.ReadOnly = true;
             this.checkOutDateDataGridViewTextBoxColumn.Width = 103;
             // 
             // guestsCountDataGridViewTextBoxColumn
@@ -147,6 +157,7 @@
             this.guestsCountDataGridViewTextBoxColumn.DataPropertyName = "GuestsCount";
             this.guestsCountDataGridViewTextBoxColumn.HeaderText = "GuestsCount";
             this.guestsCountDataGridViewTextBoxColumn.Name = "guestsCountDataGridViewTextBoxColumn";
+            this.guestsCountDataGridViewTextBoxColumn.ReadOnly = true;
             this.guestsCountDataGridViewTextBoxColumn.Width = 93;
             // 
             // roomDataGridViewTextBoxColumn
@@ -154,6 +165,7 @@
             this.roomDataGridViewTextBoxColumn.DataPropertyName = "Room";
             this.roomDataGridViewTextBoxColumn.HeaderText = "Room";
             this.roomDataGridViewTextBoxColumn.Name = "roomDataGridViewTextBoxColumn";
+            this.roomDataGridViewTextBoxColumn.ReadOnly = true;
             this.roomDataGridViewTextBoxColumn.Width = 60;
             // 
             // roomPriceDataGridViewTextBoxColumn
@@ -161,6 +173,7 @@
             this.roomPriceDataGridViewTextBoxColumn.DataPropertyName = "Room Price";
             this.roomPriceDataGridViewTextBoxColumn.HeaderText = "Room Price";
             this.roomPriceDataGridViewTextBoxColumn.Name = "roomPriceDataGridViewTextBoxColumn";
+            this.roomPriceDataGridViewTextBoxColumn.ReadOnly = true;
             this.roomPriceDataGridViewTextBoxColumn.Width = 87;
             // 
             // guestDataGridViewTextBoxColumn
@@ -193,6 +206,7 @@
             this.Controls.Add(this.dgvReservations);
             this.Controls.Add(this.tsReservationMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ReservationsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -226,5 +240,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn roomDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn guestDataGridViewTextBoxColumn;
+        private Hotel_BaseDataSetTableAdapters.procedures procedures;
     }
 }

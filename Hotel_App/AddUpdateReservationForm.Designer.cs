@@ -57,6 +57,7 @@
             this.btnOK.TabIndex = 5;
             this.btnOK.Text = "Add";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
@@ -113,6 +114,7 @@
             this.dtpCheckIn.Name = "dtpCheckIn";
             this.dtpCheckIn.Size = new System.Drawing.Size(157, 20);
             this.dtpCheckIn.TabIndex = 12;
+            this.dtpCheckIn.ValueChanged += new System.EventHandler(this.dtpCheckIn_ValueChanged);
             // 
             // dtpCheckOut
             // 

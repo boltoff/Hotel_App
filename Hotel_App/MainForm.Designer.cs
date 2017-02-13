@@ -30,11 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tsMainMenu = new System.Windows.Forms.ToolStrip();
             this.tssp = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tslbUserDesc = new System.Windows.Forms.ToolStripLabel();
             this.dgvRooms = new System.Windows.Forms.DataGridView();
+            this.btnAddRoom = new System.Windows.Forms.Button();
+            this.btnUpdateRoom = new System.Windows.Forms.Button();
+            this.lbDeleteDesc = new System.Windows.Forms.Label();
+            this.tsbtnExit = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnGuests = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnReservations = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnHistory = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnMyReservations = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnEditProfile = new System.Windows.Forms.ToolStripButton();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maxPeopleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,17 +52,8 @@
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomSelectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hotel_BaseDataSet = new Hotel_App.Hotel_BaseDataSet();
-            this.btnAddRoom = new System.Windows.Forms.Button();
-            this.btnUpdateRoom = new System.Windows.Forms.Button();
-            this.lbDeleteDesc = new System.Windows.Forms.Label();
             this.roomSelectTableAdapter = new Hotel_App.Hotel_BaseDataSetTableAdapters.RoomSelectTableAdapter();
             this.procedures = new Hotel_App.Hotel_BaseDataSetTableAdapters.procedures();
-            this.tsbtnExit = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnGuests = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnReservations = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnHistory = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnMyReservations = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnEditProfile = new System.Windows.Forms.ToolStripButton();
             this.tsMainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRooms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomSelectBindingSource)).BeginInit();
@@ -98,13 +99,13 @@
             // 
             // dgvRooms
             // 
+            this.dgvRooms.AllowUserToAddRows = false;
             this.dgvRooms.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvRooms.AutoGenerateColumns = false;
             this.dgvRooms.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvRooms.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvRooms.ColumnHeadersHeight = 26;
-            this.dgvRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRooms.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
             this.roomTypeDataGridViewTextBoxColumn,
@@ -123,56 +124,12 @@
             this.dgvRooms.GridColor = System.Drawing.SystemColors.Control;
             this.dgvRooms.Location = new System.Drawing.Point(0, 99);
             this.dgvRooms.Name = "dgvRooms";
+            this.dgvRooms.ReadOnly = true;
+            this.dgvRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRooms.Size = new System.Drawing.Size(566, 176);
             this.dgvRooms.TabIndex = 1;
             this.dgvRooms.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvRooms_UserDeletedRow);
             this.dgvRooms.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvRooms_UserDeletingRow);
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Width = 43;
-            // 
-            // roomTypeDataGridViewTextBoxColumn
-            // 
-            this.roomTypeDataGridViewTextBoxColumn.DataPropertyName = "RoomType";
-            this.roomTypeDataGridViewTextBoxColumn.HeaderText = "RoomType";
-            this.roomTypeDataGridViewTextBoxColumn.Name = "roomTypeDataGridViewTextBoxColumn";
-            this.roomTypeDataGridViewTextBoxColumn.Width = 84;
-            // 
-            // maxPeopleDataGridViewTextBoxColumn
-            // 
-            this.maxPeopleDataGridViewTextBoxColumn.DataPropertyName = "MaxPeople";
-            this.maxPeopleDataGridViewTextBoxColumn.HeaderText = "MaxPeople";
-            this.maxPeopleDataGridViewTextBoxColumn.Name = "maxPeopleDataGridViewTextBoxColumn";
-            this.maxPeopleDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // optionsDataGridViewTextBoxColumn
-            // 
-            this.optionsDataGridViewTextBoxColumn.DataPropertyName = "Options";
-            this.optionsDataGridViewTextBoxColumn.HeaderText = "Options";
-            this.optionsDataGridViewTextBoxColumn.Name = "optionsDataGridViewTextBoxColumn";
-            this.optionsDataGridViewTextBoxColumn.Width = 68;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Width = 56;
-            // 
-            // roomSelectBindingSource
-            // 
-            this.roomSelectBindingSource.DataMember = "RoomSelect";
-            this.roomSelectBindingSource.DataSource = this.hotel_BaseDataSet;
-            // 
-            // hotel_BaseDataSet
-            // 
-            this.hotel_BaseDataSet.DataSetName = "Hotel_BaseDataSet";
-            this.hotel_BaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnAddRoom
             // 
@@ -207,10 +164,6 @@
             this.lbDeleteDesc.TabIndex = 4;
             this.lbDeleteDesc.Text = "*select row and press \"Delete\" to delete";
             this.lbDeleteDesc.Visible = false;
-            // 
-            // roomSelectTableAdapter
-            // 
-            this.roomSelectTableAdapter.ClearBeforeFill = true;
             // 
             // tsbtnExit
             // 
@@ -258,6 +211,7 @@
             this.tsbtnHistory.Text = "History";
             this.tsbtnHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbtnHistory.Visible = false;
+            this.tsbtnHistory.Click += new System.EventHandler(this.tsbtnHistory_Click);
             // 
             // tsbtnMyReservations
             // 
@@ -281,6 +235,60 @@
             this.tsbtnEditProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbtnEditProfile.Visible = false;
             // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Width = 43;
+            // 
+            // roomTypeDataGridViewTextBoxColumn
+            // 
+            this.roomTypeDataGridViewTextBoxColumn.DataPropertyName = "RoomType";
+            this.roomTypeDataGridViewTextBoxColumn.HeaderText = "RoomType";
+            this.roomTypeDataGridViewTextBoxColumn.Name = "roomTypeDataGridViewTextBoxColumn";
+            this.roomTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.roomTypeDataGridViewTextBoxColumn.Width = 84;
+            // 
+            // maxPeopleDataGridViewTextBoxColumn
+            // 
+            this.maxPeopleDataGridViewTextBoxColumn.DataPropertyName = "MaxPeople";
+            this.maxPeopleDataGridViewTextBoxColumn.HeaderText = "MaxPeople";
+            this.maxPeopleDataGridViewTextBoxColumn.Name = "maxPeopleDataGridViewTextBoxColumn";
+            this.maxPeopleDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maxPeopleDataGridViewTextBoxColumn.Width = 85;
+            // 
+            // optionsDataGridViewTextBoxColumn
+            // 
+            this.optionsDataGridViewTextBoxColumn.DataPropertyName = "Options";
+            this.optionsDataGridViewTextBoxColumn.HeaderText = "Options";
+            this.optionsDataGridViewTextBoxColumn.Name = "optionsDataGridViewTextBoxColumn";
+            this.optionsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.optionsDataGridViewTextBoxColumn.Width = 68;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.priceDataGridViewTextBoxColumn.Width = 56;
+            // 
+            // roomSelectBindingSource
+            // 
+            this.roomSelectBindingSource.DataMember = "RoomSelect";
+            this.roomSelectBindingSource.DataSource = this.hotel_BaseDataSet;
+            // 
+            // hotel_BaseDataSet
+            // 
+            this.hotel_BaseDataSet.DataSetName = "Hotel_BaseDataSet";
+            this.hotel_BaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // roomSelectTableAdapter
+            // 
+            this.roomSelectTableAdapter.ClearBeforeFill = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,6 +300,7 @@
             this.Controls.Add(this.dgvRooms);
             this.Controls.Add(this.tsMainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hotel";

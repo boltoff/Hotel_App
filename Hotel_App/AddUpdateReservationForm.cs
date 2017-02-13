@@ -12,6 +12,9 @@ namespace Hotel_App
 {
     public partial class AddUpdateReservationForm : Form
     {
+        public bool changetype = false;
+        public int updateid;
+
         public AddUpdateReservationForm()
         {
             InitializeComponent();
@@ -28,10 +31,20 @@ namespace Hotel_App
 
             foreach (DataRow r in hotel_BaseDataSet.RoomSelect.Rows)
             {
-                cmbRoomType.Items.Add(r.Field<string>("RoomType"));
+                if (changetype)
+                {
+                    if (r.Field<string>("RoomType") != cmbRoomType.Items[0].ToString())
+                    {
+                        cmbRoomType.Items.Add(r.Field<string>("RoomType"));
+                    }
+                }
+                else cmbRoomType.Items.Add(r.Field<string>("RoomType"));
             }
 
             cmbRoomType.SelectedItem = cmbRoomType.Items[0];
+
+            dtpCheckIn.MinDate = DateTime.Today;
+            dtpCheckOut.MinDate = DateTime.Today.AddDays(1);
 
             //if login as Admin
             if (User.userTypeID == 2)
@@ -43,7 +56,14 @@ namespace Hotel_App
                     string fName = r.Field<string>("FName");
                     string lName = r.Field<string>("LName");
                     string fullName = fName + " " + lName;
-                    cmbGuest.Items.Add(fullName);
+                    if (changetype)
+                    {
+                        if (fullName != cmbGuest.Items[0].ToString())
+                        {
+                            cmbGuest.Items.Add(fullName);
+                        }
+                    }
+                    else cmbGuest.Items.Add(fullName);
                 }
 
                 cmbGuest.SelectedItem = cmbGuest.Items[0];
@@ -55,6 +75,85 @@ namespace Hotel_App
             {
 
             }
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            int? roomId = null;
+            int? guestId = null;
+            // if its update form
+            if (changetype)
+            {
+                //if its Admin
+                if (User.userTypeID == 2)
+                {
+                    RoomId_GuestId(out roomId, out guestId);
+
+                    procedures.ReservationUpdate(updateid,
+                        dtpCheckIn.Value,
+                        dtpCheckOut.Value,
+                        (int)nudGuestCount.Value,
+                        roomId,
+                        guestId);
+
+                    this.Close();
+                }
+                // if its Guest
+                else
+                {
+
+                }
+            }
+            // if its add form
+            else
+            {
+                //if its Admin
+                if (User.userTypeID == 2)
+                {
+                    int? id = null;
+                    RoomId_GuestId(out roomId, out guestId);
+
+                    procedures.ReservationInsert(dtpCheckIn.Value,
+                        dtpCheckOut.Value,
+                        (int)nudGuestCount.Value,
+                        roomId, guestId, ref id);
+
+                    this.Close();
+                }
+            }
+        }
+
+        private void RoomId_GuestId(out int? roomId, out int? guestId)
+        {
+            roomId = null;
+            guestId = null;
+            foreach (DataRow r in hotel_BaseDataSet.RoomSelect.Rows)
+            {
+
+                if (r.Field<string>("RoomType") == cmbRoomType.SelectedItem.ToString())
+                {
+                    roomId = r.Field<int>("ID");
+                    break;
+                }
+            }
+
+            foreach (DataRow r in hotel_BaseDataSet.GuestSelect.Rows)
+            {
+                string fName = r.Field<string>("FName");
+                string lName = r.Field<string>("LName");
+                string fullName = fName + " " + lName;
+
+                if (fullName == cmbGuest.SelectedItem.ToString())
+                {
+                    guestId = r.Field<int>("ID");
+                    break;
+                }
+            }
+        }
+
+        private void dtpCheckIn_ValueChanged(object sender, EventArgs e)
+        {
+            dtpCheckOut.MinDate = dtpCheckIn.Value.AddDays(1);
         }
     }
 }

@@ -33,7 +33,7 @@ namespace Hotel_App
         {
             int rowindex = dgvReservations.CurrentCell.RowIndex;
             List<string> cellsvalues = new List<string>();
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 7; i++)
             {
                 cellsvalues.Add(dgvReservations.Rows[rowindex].Cells[i].Value.ToString());
             }
@@ -41,17 +41,30 @@ namespace Hotel_App
             AddUpdateReservationForm updateReservationForm = new AddUpdateReservationForm();
             updateReservationForm.Text = "Update Guest";
             updateReservationForm.btnOK.Text = "Update";
-            //updateReservationForm.updateid = int.Parse(cellsvalues[0]);
-            //updateReservationForm.tbFName.Text = cellsvalues[1];
-            //updateReservationForm.tbLName.Text = cellsvalues[2];
-            //updateReservationForm.tbAddress.Text = cellsvalues[3];
-            //updateReservationForm.tbCity.Text = cellsvalues[4];
-            //updateReservationForm.tbState.Text = cellsvalues[5];
-            //updateReservationForm.tbCountry.Text = cellsvalues[6];
-            //updateReservationForm.tbPhone.Text = cellsvalues[7];
-            //updateReservationForm.tbEmail.Text = cellsvalues[8];
-            //updateReservationForm.changetype = true;
+            updateReservationForm.updateid = int.Parse(cellsvalues[0]);
+            updateReservationForm.nudGuestCount.Text = cellsvalues[3];
+            updateReservationForm.cmbRoomType.Items.Add(cellsvalues[4]);
+            updateReservationForm.cmbGuest.Items.Add(cellsvalues[6]);
+            updateReservationForm.changetype = true;
             updateReservationForm.ShowDialog();
+            this.reservationSelectTableAdapter.Fill(this.hotel_BaseDataSet.ReservationSelect);
+        }
+
+        private void tsbtnAddReservation_Click(object sender, EventArgs e)
+        {
+            AddUpdateReservationForm addReservationForm = new AddUpdateReservationForm();
+            addReservationForm.ShowDialog();
+            this.reservationSelectTableAdapter.Fill(this.hotel_BaseDataSet.ReservationSelect);
+        }
+
+        private void dgvReservations_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            int rowindex = dgvReservations.CurrentCell.RowIndex;
+            procedures.ReservationDelete(int.Parse(dgvReservations.Rows[rowindex].Cells[0].Value.ToString()));
+        }
+
+        private void dgvReservations_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
             this.reservationSelectTableAdapter.Fill(this.hotel_BaseDataSet.ReservationSelect);
         }
     }
