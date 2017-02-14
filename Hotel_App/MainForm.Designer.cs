@@ -144,6 +144,7 @@
             this.tsbtnMyReservations.Text = "My Reservations";
             this.tsbtnMyReservations.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbtnMyReservations.Visible = false;
+            this.tsbtnMyReservations.Click += new System.EventHandler(this.tsbtnMyReservations_Click);
             // 
             // tsbtnEditProfile
             // 

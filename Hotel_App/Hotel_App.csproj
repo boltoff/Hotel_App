@@ -70,6 +70,12 @@
     <Compile Include="AuthorizationForm.Designer.cs">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GuestReservationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuestReservationForm.Designer.cs">
+      <DependentUpon>GuestReservationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GuestsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuestReservationForm.resx">
+      <DependentUpon>GuestReservationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GuestsForm.resx">
       <DependentUpon>GuestsForm.cs</DependentUpon>

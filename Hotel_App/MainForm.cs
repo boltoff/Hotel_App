@@ -46,6 +46,11 @@ namespace Hotel_App
                 btnAddRoom.Visible = true;
                 btnUpdateRoom.Visible = true;
             }
+            else
+            {
+                lbDeleteDesc.Visible = true;
+                lbDeleteDesc.Text = "*Double click on row to make reservation";
+            }
         }
 
         private void dgvRooms_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
@@ -160,6 +165,12 @@ namespace Hotel_App
             AddUpdateReservationForm addMyReservationForm = new AddUpdateReservationForm();
             addMyReservationForm.cmbRoomType.Items.Add(dgvRooms.Rows[rowindex].Cells[1].Value.ToString());
             addMyReservationForm.ShowDialog();
+        }
+
+        private void tsbtnMyReservations_Click(object sender, EventArgs e)
+        {
+            GuestReservationForm gureform = new GuestReservationForm();
+            gureform.ShowDialog();
         }
     }
 }
