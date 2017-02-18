@@ -52,6 +52,7 @@ namespace Hotel_App
                     ref guestid);
                 if (User.userTypeID == 1)
                 {
+                    User.guestID = (int)guestid;
                     procedures.UserUpdateGuestID(guestid, User.userID);
                 }
 

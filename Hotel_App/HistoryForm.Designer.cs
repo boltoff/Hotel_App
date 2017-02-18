@@ -34,19 +34,19 @@
             this.tsbtnClose = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.dgvHistory = new System.Windows.Forms.DataGridView();
-            this.hotel_BaseDataSet = new Hotel_App.Hotel_BaseDataSet();
-            this.historyViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.historyViewTableAdapter = new Hotel_App.Hotel_BaseDataSetTableAdapters.HistoryViewTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkInDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkOutDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guestsCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guestNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.historyViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hotel_BaseDataSet = new Hotel_App.Hotel_BaseDataSet();
+            this.historyViewTableAdapter = new Hotel_App.Hotel_BaseDataSetTableAdapters.HistoryViewTableAdapter();
             this.tsHistoryMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hotel_BaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.historyViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotel_BaseDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tsHistoryMenu
@@ -58,7 +58,7 @@
             this.toolStripSeparator1});
             this.tsHistoryMenu.Location = new System.Drawing.Point(0, 0);
             this.tsHistoryMenu.Name = "tsHistoryMenu";
-            this.tsHistoryMenu.Size = new System.Drawing.Size(555, 72);
+            this.tsHistoryMenu.Size = new System.Drawing.Size(617, 72);
             this.tsHistoryMenu.TabIndex = 0;
             this.tsHistoryMenu.Text = "toolStrip1";
             // 
@@ -80,6 +80,7 @@
             // dgvHistory
             // 
             this.dgvHistory.AllowUserToAddRows = false;
+            this.dgvHistory.AllowUserToDeleteRows = false;
             this.dgvHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvHistory.AutoGenerateColumns = false;
             this.dgvHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
@@ -96,22 +97,8 @@
             this.dgvHistory.Name = "dgvHistory";
             this.dgvHistory.ReadOnly = true;
             this.dgvHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHistory.Size = new System.Drawing.Size(555, 175);
+            this.dgvHistory.Size = new System.Drawing.Size(617, 175);
             this.dgvHistory.TabIndex = 1;
-            // 
-            // hotel_BaseDataSet
-            // 
-            this.hotel_BaseDataSet.DataSetName = "Hotel_BaseDataSet";
-            this.hotel_BaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // historyViewBindingSource
-            // 
-            this.historyViewBindingSource.DataMember = "HistoryView";
-            this.historyViewBindingSource.DataSource = this.hotel_BaseDataSet;
-            // 
-            // historyViewTableAdapter
-            // 
-            this.historyViewTableAdapter.ClearBeforeFill = true;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -161,11 +148,25 @@
             this.guestNameDataGridViewTextBoxColumn.ReadOnly = true;
             this.guestNameDataGridViewTextBoxColumn.Width = 88;
             // 
+            // historyViewBindingSource
+            // 
+            this.historyViewBindingSource.DataMember = "HistoryView";
+            this.historyViewBindingSource.DataSource = this.hotel_BaseDataSet;
+            // 
+            // hotel_BaseDataSet
+            // 
+            this.hotel_BaseDataSet.DataSetName = "Hotel_BaseDataSet";
+            this.hotel_BaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // historyViewTableAdapter
+            // 
+            this.historyViewTableAdapter.ClearBeforeFill = true;
+            // 
             // HistoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 262);
+            this.ClientSize = new System.Drawing.Size(617, 262);
             this.Controls.Add(this.dgvHistory);
             this.Controls.Add(this.tsHistoryMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -178,8 +179,8 @@
             this.tsHistoryMenu.ResumeLayout(false);
             this.tsHistoryMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hotel_BaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.historyViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotel_BaseDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
