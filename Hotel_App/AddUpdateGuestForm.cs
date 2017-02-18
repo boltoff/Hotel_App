@@ -28,28 +28,48 @@ namespace Hotel_App
         {
             if (changetype)
             {
-                procedures.GuestUpdate(updateid, tbFName.Text,
-                    tbLName.Text,
-                    tbAddress.Text,
-                    tbCity.Text,
-                    tbState.Text,
-                    tbCountry.Text,
-                    tbPhone.Text,
-                    tbEmail.Text);
-                this.Close();
+                try
+                {
+                    procedures.GuestUpdate(updateid, tbFName.Text,
+                        tbLName.Text,
+                        tbAddress.Text,
+                        tbCity.Text,
+                        tbState.Text,
+                        tbCountry.Text,
+                        tbPhone.Text,
+                        tbEmail.Text);
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Please, fill all Text Boxes.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+                }
             }
             else
             {
                 int? guestid = null;
-                procedures.GuestInsert(tbFName.Text,
-                    tbLName.Text,
-                    tbAddress.Text,
-                    tbCity.Text,
-                    tbState.Text,
-                    tbCountry.Text,
-                    tbPhone.Text,
-                    tbEmail.Text,
-                    ref guestid);
+                try
+                {
+                    procedures.GuestInsert(tbFName.Text,
+                        tbLName.Text,
+                        tbAddress.Text,
+                        tbCity.Text,
+                        tbState.Text,
+                        tbCountry.Text,
+                        tbPhone.Text,
+                        tbEmail.Text,
+                        ref guestid);
+                }
+                catch
+                {
+                    MessageBox.Show("Please, fill all Text Boxes.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+                }
                 if (User.userTypeID == 1)
                 {
                     User.guestID = (int)guestid;
